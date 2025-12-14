@@ -1,0 +1,46 @@
+INFORME DE CASOS DE USO
+
+Caso 1: Inicio de sesión del jugador
+- Usuario/jugador
+- Precondición: El jugador introduce un nombre válido (mínimo 4 letras, sin números)
+- Flujo principal:
+  1. El jugador escribe su nombre
+  2. El sistema valida el nombre
+  3. Se habilita el botón Jugar
+- Resultado esperado: Acceso a la pantalla del juego con el nombre mostrado
+
+Caso 2: Generación del tablero
+- Sistema
+- Precondición: El jugador pulsa Jugar
+- Flujo principal:
+  1. Se genera un tablero 10x10
+  2. Se coloca el balón en la posición inicial (0,0)
+  3. Se coloca la portería en la posición final (9,9)
+- Resultado esperado: Tablero visible con elementos iniciales
+
+Caso 3: Tirada de dado
+- Jugador
+- Precondición: El tablero está activo
+- Flujo principal:
+  1. El jugador pulsa Tirar dado
+  2. Se genera un número aleatorio entre 1 y 6
+  3. Se muestran las celdas posibles a las que puede moverse el balón
+- Resultado esperado: Celdas resaltadas según el valor del dado
+
+Caso 4: Movimiento del balón
+- Jugador
+- Precondición: Existen celdas resaltadas
+- Flujo principal:
+  1. El jugador hace clic en una celda resaltada
+  2. El balón se mueve a esa celda
+  3. Se actualiza la posición del jugador
+- Resultado esperado: El balón cambia de posición en el tablero
+
+Caso 5: Victoria y récord
+- Sistema
+- Precondición: El balón llega a la portería (9,9)
+- Flujo principal:
+  1. El sistema muestra mensaje de victoria con número de lanzamientos
+  2. Se compara con el récord guardado en LocalStorage
+  3. Si es menor, se actualiza el récord
+- Resultado esperado: Mensaje de victoria y actualización de récord

@@ -1,0 +1,44 @@
+DOCUMENTACIÓN DEL PROYECTO
+
+1. INTRODUCCIÓN
+Este proyecto consiste en un juego interactivo cuyo objetivo es guiar un balón a través de un tablero de 10x10 hasta alcanzar 
+la portería. El jugador avanza mediante tiradas de dado que determinan las posibles casillas a las que puede moverse.
+
+El diseño busca combinar simplicidad técnica con una experiencia visual atractiva, utilizando imágenes deportivas y mensajes 
+motivadores al ganar. Además, se han implementado funciones de validación y almacenamiento de récords para mejorar la usabilidad 
+y la continuidad de las partidas.
+
+2. DECISIONES DE DISEÑO
+- Estructura HTML:
+  Se optó por una estructura semántica clara, separando el formulario inicial (para introducir el nombre del jugador) de la 
+  pantalla del juego. Cada elemento cuenta con identificadores específicos que facilitan la manipulación desde JavaScript.
+
+- Tablero 10x10:
+  El tablero se implementa como una tabla HTML con celdas numeradas (00 a 99). Este enfoque permite acceder fácilmente a cada 
+  celda mediante su identificador y sincronizar la lógica interna con la representación visual.
+
+- Tema del juego:
+  En lugar de héroe y cofre, se eligieron un balón y una portería como elementos principales.
+
+- Validación del nombre:
+  Antes de iniciar la partida, se exige que el jugador introduzca un nombre válido (mínimo 4 letras y sin números). Esta 
+  validación evita errores y asegura una experiencia más controlada.
+
+- Almacenamiento del récord:
+  Se utiliza LocalStorage para guardar el récord de lanzamientos. Esta decisión garantiza que el dato persista entre partidas 
+  sin necesidad de servidor ni base de datos externa.
+
+- Mensajes personalizados:
+  Se añadieron mensajes de bienvenida, victoria y récord.
+
+3. DESAFÍOS ENCONTRADOS
+- Resaltado de celdas:
+  Fue necesario asegurar que las celdas válidas se marcaran correctamente tras cada tirada y que los eventos de clic se 
+  añadieran sin duplicarse. Se solucionó con la función resaltarCeldas(), que limpia eventos anteriores y añade los nuevos 
+  de forma controlada.
+
+- Reinicio de partida:
+  Se diseñó la función reiniciarPartida() para restablecer el tablero y el contador de lanzamientos, manteniendo el récord. 
+  Esto evita tener que recargar la página y mejora la continuidad del juego.
+
+Buseif.
